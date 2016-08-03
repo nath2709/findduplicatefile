@@ -177,51 +177,7 @@ public class DuplicateFiles {
         return hash;
     }
 
-    // /**
-    // * Using file channel method to read content of file and generate hash.
-    // *
-    // * @param file
-    // * @return
-    // */
-    // private String generateFileHashChannel(File file) {
-    // FileInputStream fis;
-    // byte content[] = null;
-    // String hash = "";
-    // try {
-    // fis = new FileInputStream(file);
-    // FileChannel ch = fis.getChannel();
-    // ByteBuffer bb = ByteBuffer.allocate((int) file.length());
-    // content = new byte[(int) file.length()];
-    // int nRead, nGet;
-    // while ((nRead = ch.read(bb)) != -1) {
-    // if (nRead == 0)
-    // continue;
-    // bb.position(0);
-    // bb.limit(nRead);
-    // while (bb.hasRemaining()) {
-    // nGet = Math.min(bb.remaining(), (int) file.length());
-    // bb.get(content, 0, nGet);
-    // }
-    // bb.clear();
-    // }
-    // ch.close();
-    // fis.close();
-    // MessageDigest md5 = MessageDigest.getInstance("MD5");
-    // md5.update(content);
-    // hash = String.format("%032x", new BigInteger(1, md5.digest()));
-    // System.out.println(hash + " " + file.getAbsolutePath());
-    //
-    // } catch (FileNotFoundException e) {
-    // e.printStackTrace();
-    // } catch (IOException e) {
-    // e.printStackTrace();
-    // } catch (NoSuchAlgorithmException e) {
-    // e.printStackTrace();
-    // }
-    // return hash;
-    // }
-
-    public static void main(String[] args) {
+     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
         String path = scanner.nextLine();
